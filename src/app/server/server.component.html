@@ -1,0 +1,19 @@
+<h3>Server component created by {{ Test }}</h3>
+<input type="text" name="username1" [(ngModel)]="userName">
+<button  [disabled]="!userName" (click)="resetUsername()">Reset</button>
+<p>{{userName}}</p>
+<p>{{userName1}}</p>
+
+
+<div class="container">
+	<div class="row">
+		<button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+		<p *ngIf="this.displayTest==='on' ">This is the demo text</p>
+	</div>
+	<div class="row">
+		<div *ngFor="let log of allLogs; let i = index">
+			<p [ngStyle]="{backgroundColor: i=='5' ? 'blue' :'' }"
+			  [ngClass]="{logClass:i==5}">{{ log }}</p>
+		</div>
+	</div>
+</div>
